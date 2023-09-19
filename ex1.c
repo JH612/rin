@@ -1,29 +1,20 @@
 #include <stdio.h>
 
-int fact(int n);
+int str_len(char* str);
 
 int main() {
-	printf("정수 1개 입력 : ");
-	int n;
-	scanf_s("%d", &n);
-	int num = fact(n);
-	if (num == -1) {
-		printf("입력이 잘못 되어 예상치 못한 결과를 얻었습니다.");
-	}
-	else {
-		printf("%d! = %d", n, num);
-	}
+	char str[1000];
+	printf("문자열 입력 : ");
+	scanf_s("%s", str,1000);
+	printf("문자열의 길이 : %d\n", str_len(str));
+
 }
 
-int fact(int n) {
-	int i = 0, sum = 1;
-	if (n <= 0) {
-		return -1;
+int str_len(char* str) {
+	int num = 0;
+	while (*str) {
+		str++;
+		num++;
 	}
-	else {
-		for (i=n; i > 0; i--) {
-			sum *= i;
-		}
-		return sum;
-	}
+	return num;
 }

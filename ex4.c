@@ -1,19 +1,16 @@
 #include <stdio.h>
-
-void swap(int* a, int* b);
-
-int main() {
-	int a = 0, b = 0;
-	printf("정수 2개 입력 : ");
-	scanf_s("%d %d", &a, &b);
-	printf("교환 전 a : %d, b : %d\n", a, b);
-	swap(&a, &b);
-	printf("교환 후 a : %d, b : %d", a, b);
+void putStrDigit(char* str) {
+	while (*str) {
+		if (*str >= '0' && *str <= '9') {
+			printf("%c", *str);
+		}
+		str++;
+		
+	}
 }
-
-void swap(int* a, int* b) {
-	int tmp = 0;
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+int main() {
+	char str[100] = { '\0' };
+	printf("문자열 입력 : ");
+	scanf_s("%s", str,100);
+	putStrDigit(str);
 }
